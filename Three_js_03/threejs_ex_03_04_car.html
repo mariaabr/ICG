@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--
+
+		threejs_ex_03_01_models.html
+
+		J. Madeira - March 2021 - Updated: April 2023
+
+-->
+
+<head>
+
+	<title>three.js example 01 &mdash; Some Models</title>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+	<style>
+		body {
+
+			background-color: #ffffff;
+
+			/* To use the complete page */
+
+			margin: 0px;
+
+			overflow: hidden;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- The library --- Can be a local version -->
+
+	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+	<script type="importmap">
+		{
+    		"imports": {
+     			 "three": "https://threejs.org/build/three.module.js"
+    		}
+  		}
+	</script>
+
+	<!-- Javascript code that runs the Three.js example -->
+
+	<script type="module">
+
+		import * as THREE from 'three';
+		import { OrbitControls } from "https://threejs.org/examples/jsm/controls/OrbitControls.js";
+
+		function createcar(x, z, bWith, bHeight, bDepth, cilRadius, cilHeight) {
+
+			// Creating a model by grouping basic geometries
+
+			// Cylinder centered at the origin
+
+			const boxWidth = bWith;
+			const boxHeight = bHeight;
+			const boxDepth = bDepth;
+
+			const boxGeometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+			const wineMaterial = new THREE.MeshPhongMaterial({ color: 0x5e2129, wireframe: false, shininess: 100 });
+
+			const box = new THREE.Mesh(boxGeometry, wineMaterial);
+
+			// Move base of the box to y = 0
+
+			box.position.y = boxHeight / 2.0;
+
+			box.receiveShadow = true;
+			box.castShadow = true;
+
+			const cylinder1Radius = cilRadius;
+			const cylinder1Height = cilHeight;
+
+			const cylinder1Geometry = new THREE.CylinderGeometry(cilRadius, cilRadius, cilHeight, 32);
+
+			const black1Material = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: false, shininess: 100 });
+
+			const cylinder1 = new THREE.Mesh(cylinder1Geometry, black1Material);
+
+			// Move base of the cone to the top of the box
+
+			cylinder1.position.y = boxHeight + cylinder1Height / 2.0;
+
+			cylinder1.receiveShadow = true;
+			cylinder1.castShadow = true;
+
+            const cylinder2Radius = cilRadius;
+			const cylinder2Height = cilHeight;
+
+			const cylinder2Geometry = new THREE.CylinderGeometry(cilRadius, cilRadius, cilHeight, 32);
+
+			const black2Material = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: false, shininess: 100 });
+
+			const cylinder2 = new THREE.Mesh(cylinder2Geometry, black2Material);
+
+			// Move base of the cone to the top of the box
+
+			cylinder2.position.y = boxHeight + cylinder2Height / 2.0;
+
+			cylinder2.receiveShadow = true;
+			cylinder2.castShadow = true;
+
+            const cylinder3Radius = cilRadius;
+			const cylinder3Height = cilHeight;
+
+			const cylinder3Geometry = new THREE.CylinderGeometry(cilRadius, cilRadius, cilHeight, 32);
+
+			const black3Material = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: false, shininess: 100 });
+
+			const cylinder3 = new THREE.Mesh(cylinder3Geometry, black3Material);
+
+			// Move base of the cone to the top of the box
+
+			cylinder3.position.y = boxHeight + cylinder3Height / 2.0;
+
+			cylinder3.receiveShadow = true;
+			cylinder3.castShadow = true;
+
+            const cylinder4Radius = cilRadius;
+			const cylinder4Height = cilHeight;
+
+			const cylinder4Geometry = new THREE.CylinderGeometry(cilRadius, cilRadius, cilHeight, 32);
+
+			const black4Material = new THREE.MeshPhongMaterial({ color: 0x008000, wireframe: false, shininess: 100 });
+
+			const cylinder4 = new THREE.Mesh(cylinder4Geometry, black4Material);
+
+			// Move base of the cone to the top of the box
+
+			cylinder4.position.y = boxHeight + cylinder4Height / 2.0;
+
+			cylinder4.receiveShadow = true;
+			cylinder4.castShadow = true;
+			// car
+
+			const car = new THREE.Group();
+
+			car.add(box);
+
+			car.add(cylinder1);
+
+			// car positions
+
+			car.position.x = x;
+			car.position.z = z;
+
+			// car.receiveShadow = true;
+			// car.castShadow = true;
+
+			return car;
+		}
+
+		// Once everything is loaded, run this function
+
+		function init() {
+
+			// The SCENE
+
+			const scene = new THREE.Scene();
+
+			// Plane Helper to represent the ZOX plane
+
+			const planeGeometry = new THREE.PlaneGeometry(150, 150);
+			const planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+			const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+			plane.rotation.x = -Math.PI / 2; // no eixo XZ
+
+			plane.receiveShadow = true;
+
+			scene.add(plane);
+
+			// The coordinate axes
+
+			const axes = new THREE.AxesHelper(15);
+
+			scene.add(axes);
+
+			// Adding models to the scene
+
+			const car_1 = createcar(-50, 25, 20, 7, 5, 2, 2);
+			scene.add(car_1);
+
+			const car_2 = createcar(-10, 15, 20, 7, 5, 2, 2);
+			scene.add(car_2);
+
+			const car_3 = createcar(15, 5, 20, 7, 5, 2, 2);
+			scene.add(car_3);
+
+			// The CAMERA --- A camera is added to the scene
+
+			// --- Where the viewer is and how he is looking at the scene
+
+			const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 400);
+
+			camera.position.y = 50;
+
+			camera.position.z = 150;
+
+			// Point the camera to the center of the scene
+
+			camera.lookAt(scene.position);
+
+			scene.add(camera)
+
+			// spotlight
+			const spotLight = new THREE.SpotLight(0xffffff, 10000);
+			spotLight.position.set(-10, 90, 50);
+
+			spotLight.castShadow = true;
+
+			spotLight.shadow.mapSize.width = 5000;
+			spotLight.shadow.mapSize.height = 5000;
+
+			scene.add(spotLight);
+
+			// spotlight helper
+			const spotLightHelper = new THREE.SpotLightHelper(spotLight);
+			scene.add(spotLightHelper);
+
+			// The RENDERER --- To display the scene on the Web page
+
+			const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+			renderer.setClearColor(new THREE.Color(0xffffff));
+
+			renderer.setPixelRatio(window.devicePixelRatio);
+
+			renderer.setSize(window.innerWidth, window.innerHeight);
+
+			renderer.shadowMap.enabled = true;
+
+			// Add the output of the renderer
+
+			document.body.appendChild(renderer.domElement);
+
+			// Render the scene
+
+			const controls = new OrbitControls(camera, renderer.domElement);
+
+			// Animate the scene         
+			function animate() {
+				requestAnimationFrame(animate);
+				controls.update();
+				renderer.render(scene, camera);
+			}
+			animate();
+		}
+
+		window.onload = init
+
+	</script>
+
+</body>
+
+</html>
