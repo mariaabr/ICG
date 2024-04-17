@@ -18,7 +18,7 @@
 
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
-	<!-- <style>
+	<style>
 		body {
 
 			background-color: #ffffff;
@@ -29,77 +29,47 @@
 
 			overflow: hidden;
 		}
-	</style> -->
+	</style>
 
 	<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
-	<!-- <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/build/three.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/three@0.122.0/build/three.min.js"></script>
 	<script src="https://code.createjs.com/1.0.0/tweenjs.min.js"></script>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/controls/OrbitControls.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/three.interaction@0.2.3/build/three.interaction.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/controls/FirstPersonControls.min.js"></script>
 
-	<script type="text/javascript" src="builders/createObjects.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/three.interaction@0.2.3/build/three.interaction.js"></script>
 
-	<script type="text/javascript" src="helper.js" defer></script>
-	<script type="text/javascript" src="scene.js" defer></script>
-
-	<script type="importmap">
+	<!-- <script type="importmap">
 		{
 			"imports": {
 				"three": "https://threejs.org/build/three.module.js",
 				"three/addons/": "https://threejs.org/examples/jsm/"
 			}
 		}
-	</script>
-
-	<!-- <script type="module">
-		// import * as THREE from 'three';
-		// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 	</script> -->
+
+	<script type="text/javascript" src="builders/createObjects.js" defer></script>
+
+	<script type="text/javascript" src="helper.js" defer></script>
+	<script type="text/javascript" src="scene.js" defer></script>
+
 </head>
 
 <body>
-	<div id="Tag3DScene"></div>
+	<div id="SceneGame"></div>
+
+	<!-- <script type="module">
+
+		import * as THREE from 'three';
+
+		// import Stats from 'three/addons/libs/stats.module.js';
+
+		import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+		import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
+	
+	</script> -->
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- function addPlaneBody(){
-groundMaterial = new CANNON.Material('ground')
-const planeShape = new CANNON.Box(new CANNON.Vec3(10, 0.01, 100));
-planeBody = new CANNON.Body({ mass: 0, material: groundMaterial });
-planeBody.addShape(planeShape);
-planeBody.position.set(0, 0, -90);
-world.addBody(planeBody);
-}
-
-
-
-function addPlane(){
-const texture = new THREE.TextureLoader().load( "src/assets/plane.png" );
-
-let geometry = new THREE.BoxGeometry(20, 0, 200);
-let material = new THREE.MeshBasicMaterial({map: texture});
-let planeThree = new THREE.Mesh(geometry, material);
-planeThree.position.set(0, 0, -90);
-scene.add(planeThree);
-} -->
