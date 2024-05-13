@@ -1,0 +1,11 @@
+Model Information:
+* title:	Árvore
+* source:	https://sketchfab.com/3d-models/arvore-3530d4e265e646e48189517f76a8991e
+* author:	marcelosujo (https://sketchfab.com/marcelosujo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Árvore" (https://sketchfab.com/3d-models/arvore-3530d4e265e646e48189517f76a8991e) by marcelosujo (https://sketchfab.com/marcelosujo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

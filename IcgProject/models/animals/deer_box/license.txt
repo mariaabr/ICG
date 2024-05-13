@@ -1,0 +1,11 @@
+Model Information:
+* title:	Deer (Minecraft)
+* source:	https://sketchfab.com/3d-models/deer-minecraft-f8cbc5f21371483c980a6a9791df4257
+* author:	dinolover4242 (https://sketchfab.com/dinolover4242)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Deer (Minecraft)" (https://sketchfab.com/3d-models/deer-minecraft-f8cbc5f21371483c980a6a9791df4257) by dinolover4242 (https://sketchfab.com/dinolover4242) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

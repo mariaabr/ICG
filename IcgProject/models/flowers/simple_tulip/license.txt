@@ -1,0 +1,11 @@
+Model Information:
+* title:	Simple Tulip
+* source:	https://sketchfab.com/3d-models/simple-tulip-5f63e7ab9b314e04883d5d40ab0bcfcf
+* author:	Ingenuitee (https://sketchfab.com/Ingenuitee)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Simple Tulip" (https://sketchfab.com/3d-models/simple-tulip-5f63e7ab9b314e04883d5d40ab0bcfcf) by Ingenuitee (https://sketchfab.com/Ingenuitee) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

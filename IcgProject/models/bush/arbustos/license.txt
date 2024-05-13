@@ -1,0 +1,11 @@
+Model Information:
+* title:	Arbustos
+* source:	https://sketchfab.com/3d-models/arbustos-170e7d1e30c94ed6927b870582fc4255
+* author:	Rubens (https://sketchfab.com/zomrubi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Arbustos" (https://sketchfab.com/3d-models/arbustos-170e7d1e30c94ed6927b870582fc4255) by Rubens (https://sketchfab.com/zomrubi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

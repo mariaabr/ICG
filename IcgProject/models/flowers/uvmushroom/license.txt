@@ -1,0 +1,11 @@
+Model Information:
+* title:	UVmushroom
+* source:	https://sketchfab.com/3d-models/uvmushroom-49e07d6a217240d4a69a81e22ab0f846
+* author:	timetravelastronaut (https://sketchfab.com/timetravelastronaut)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "UVmushroom" (https://sketchfab.com/3d-models/uvmushroom-49e07d6a217240d4a69a81e22ab0f846) by timetravelastronaut (https://sketchfab.com/timetravelastronaut) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

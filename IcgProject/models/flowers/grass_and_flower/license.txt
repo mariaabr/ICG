@@ -1,0 +1,11 @@
+Model Information:
+* title:	Grass and Flower
+* source:	https://sketchfab.com/3d-models/grass-and-flower-2b8513497e7045c0a0be0c1fc60d8314
+* author:	Luis Gustavo (https://sketchfab.com/Luissantos2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Grass and Flower" (https://sketchfab.com/3d-models/grass-and-flower-2b8513497e7045c0a0be0c1fc60d8314) by Luis Gustavo (https://sketchfab.com/Luissantos2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

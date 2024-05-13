@@ -1,0 +1,11 @@
+Model Information:
+* title:	Deer puppet
+* source:	https://sketchfab.com/3d-models/deer-puppet-2c12a6a8d2964abebb54aa1010331d04
+* author:	MrPuppet (https://sketchfab.com/MrPuppet)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Deer puppet" (https://sketchfab.com/3d-models/deer-puppet-2c12a6a8d2964abebb54aa1010331d04) by MrPuppet (https://sketchfab.com/MrPuppet) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

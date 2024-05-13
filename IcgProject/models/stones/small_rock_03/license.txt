@@ -1,0 +1,11 @@
+Model Information:
+* title:	Small Rock 03
+* source:	https://sketchfab.com/3d-models/small-rock-03-ce9b8194200b4e4faa1b6fa74513c18d
+* author:	luxmaterium (https://sketchfab.com/luxmaterium)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Small Rock 03" (https://sketchfab.com/3d-models/small-rock-03-ce9b8194200b4e4faa1b6fa74513c18d) by luxmaterium (https://sketchfab.com/luxmaterium) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

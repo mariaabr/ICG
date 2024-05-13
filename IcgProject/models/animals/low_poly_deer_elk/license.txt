@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low poly Deer Elk
+* source:	https://sketchfab.com/3d-models/low-poly-deer-elk-d98d429ede3b48279d5e20bc92b39a12
+* author:	MadTrollStudio (https://sketchfab.com/madtrollstudio)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low poly Deer Elk" (https://sketchfab.com/3d-models/low-poly-deer-elk-d98d429ede3b48279d5e20bc92b39a12) by MadTrollStudio (https://sketchfab.com/madtrollstudio) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

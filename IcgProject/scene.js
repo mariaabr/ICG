@@ -1,3 +1,21 @@
+import { helper } from './helper.js';
+import { createSun } from './builders/createObjects.js';
+import { createMoon } from './builders/createObjects.js';
+import { createTree1 } from './builders/createObjects.js';
+import { createForest1 } from './builders/createObjects.js';
+import { createForest2 } from './builders/createObjects.js';
+import { createForest3 } from './builders/createObjects.js';
+import { createMountains } from './builders/createObjects.js';
+import { createForestFill } from './builders/createObjects.js';
+import { createLakePartition } from './builders/createObjects.js';
+import { createFireflies } from './builders/createObjects.js';
+import { createBunny1 } from './builders/createObjects.js';
+import { createBunny2 } from './builders/createObjects.js';
+import { createBunny3 } from './builders/createObjects.js';
+import { createFrog1 } from './builders/createObjects.js';
+import { createFrog2 } from './builders/createObjects.js';
+import { Person } from './builders/createObjects.js';
+
 // store the scene graph, and elements usefull to rendering the scene
 const sceneElements = {
     sceneGraph: null,
@@ -7,6 +25,10 @@ const sceneElements = {
 };
 
 let stars;
+let startsXBunnies = [];
+let startsZBunnies = [];
+let startsXFrogs = [];
+let startsZFrogs = [];
 
 // initialize scene
 helper.initEmptyScene(sceneElements);
@@ -84,8 +106,9 @@ function onDocumentKeyUp(event) {
 function load3DObjects(sceneGraph) {
 
     // ground plane
+    const texture = new THREE.TextureLoader().load("resources/grasstexture.jpeg")
     const planeGeometry = new THREE.BoxGeometry(5000, 5000, 7);
-    const planeMaterial = new THREE.MeshPhongMaterial({ color: 0x88b257, side: THREE.DoubleSide });
+    const planeMaterial = new THREE.MeshPhongMaterial({ map: texture, color: 0x88b257, side: THREE.DoubleSide });
     const planeObject = new THREE.Mesh(planeGeometry, planeMaterial);
     sceneGraph.add(planeObject);
 
@@ -132,39 +155,114 @@ function load3DObjects(sceneGraph) {
     stars = new THREE.Points(geometry, new THREE.PointsMaterial({ color: 0xffffff }));
     stars.name = "stars";
 
+    // create tree1
+    const tree1 = createTree1(1000, 0, -500);
+    sceneGraph.add(tree1);
+
+    // create forest1
+    const forest1 = createForest1();
+    sceneGraph.add(forest1);
+
+    // create forest2
+    const forest2 = createForest2();
+    sceneGraph.add(forest2);
+
+    // create forest3
+    const forest3 = createForest3();
+    sceneGraph.add(forest3);
+
+    // create mountains
+    const mountains = createMountains();
+    sceneGraph.add(mountains);
+
+    // create forest fill
+    const forestFill = createForestFill();
+    sceneGraph.add(forestFill);
+
+    // create lake ambient
+    const lakepart = createLakePartition();
+    sceneGraph.add(lakepart);
+
+    // create fireflies
+    const fireflies = createFireflies();
+    sceneGraph.add(fireflies);
+    fireflies.name = "fireflies";
+
+    // create bunny1
+    const xb1 = Math.random() * -2000 + 250;
+    const zb1 = Math.random() * 1950 - 100;
+    const bunny1 = createBunny1(xb1, 10, zb1);
+    sceneGraph.add(bunny1);
+    bunny1.name = "bunny1";
+    let startXBunny1 = xb1;
+    startsXBunnies.push(startXBunny1);
+    let startZBunny1 = zb1;
+    startsZBunnies.push(startZBunny1);
+
+    // create bunny2
+    const xb2 = Math.random() * -2000 + 250;
+    const zb2 = Math.random() * 1950 - 100;
+    const bunny2 = createBunny2(xb2, 10, zb2);
+    sceneGraph.add(bunny2);
+    bunny2.name = "bunny2";
+    let startXBunny2 = xb2;
+    startsXBunnies.push(startXBunny2);
+    let startZBunny2 = zb2;
+    startsZBunnies.push(startZBunny2);
+
+    // create bunny3
+    const xb3 = Math.random() * -2000 + 250;
+    const zb3 = Math.random() * 1950 - 100;
+    const bunny3 = createBunny3(xb3, 10, zb3);
+    sceneGraph.add(bunny3);
+    bunny3.name = "bunny3";
+    let startXBunny3 = xb3;
+    startsXBunnies.push(startXBunny3);
+    let startZBunny3 = zb3;
+    startsZBunnies.push(startZBunny3);
+
+    // create frog1
+    const xf1 = Math.random() * 500 + 1900;
+    const zf1 = Math.random() * 500 + 1350;
+    const frog1 = createFrog1(xf1, 10, zf1);
+    sceneGraph.add(frog1);
+    frog1.name = "frog1";
+    let startXFrog1 = xf1;
+    startsXFrogs.push(startXFrog1);
+    let startZFrog1 = zf1;
+    startsZFrogs.push(startZFrog1);
+
+    // create frog2
+    const xf2 = Math.random() *  1500 + 500;
+    const zf2 = Math.random() * 1000 + 500;
+    const frog2 = createFrog2(xf2, 10, zf2);
+    sceneGraph.add(frog2);
+    frog2.name = "frog2";
+    let startXFrog2 = xf2;
+    startsXFrogs.push(startXFrog2);
+    let startZFrog2 = zf2;
+    startsZFrogs.push(startZFrog2);
+    
     // create main character
-    var personObj = new Person();
+    var personObj = new Person(3, 0 , 5);
     var person = personObj.createPerson();
     sceneGraph.add(person);
     person.name = "filsons";
 
     // set position of person - base on the plane
-    person.translateY(4.3);
+    person.translateY(10);
 
     // set shadow property
-    person.castShadow = true;
-    person.receiveShadow = true;
+    // person.castShadow = true;
+    // person.receiveShadow = true;
 
 }
 
 // animation
 
-// displacement values
-var delta = 0.1;
-var disp = 0.2, fallSpeed = 0;
-var previousTime = performance.now();
-var armAngle, legAngle = 0;
-
 function computeFrame() {
 
-    sceneElements.control.update(0.3); // update first camera control
-
-    var deltaTime = performance.now() - previousTime;
-    previousTime = performance.now();
-
-    // can extract an object from the scene Graph from its name
-
-    // const stars = sceneElements.sceneGraph.getObjectByName("stars");;
+    sceneElements.control.update(0.3); // update first camera control;
 
     const sun = sceneElements.sceneGraph.getObjectByName("sun");
     const planetPos = new THREE.Vector3();
@@ -173,10 +271,6 @@ function computeFrame() {
     // get sunlight and rotate
     const sunlight = sceneElements.sceneGraph.getObjectByName("sunPivotRotation");
     sunlight.rotation.x -= 0.005;
-
-    // const moon = sceneElements.sceneGraph.getObjectByName("moon");
-    // const planet2Pos = new THREE.Vector3();
-    // const moonPos = sun.getWorldPosition(planet2Pos);
 
     // get moonlight and rotate
     const moonlight = sceneElements.sceneGraph.getObjectByName("moonPivotRotation");
@@ -216,84 +310,111 @@ function computeFrame() {
         sceneElements.sceneGraph.getObjectByName("light_sun").intensity = 0;
     }
 
-    // controling with the keyboard
+    // aimations
+    const time = Date.now() * 0.001;
+    var step = 0;
 
-    const person = sceneElements.sceneGraph.getObjectByName("filsons");
+    // animate bunnys
+    const bunny1 = sceneElements.sceneGraph.getObjectByName("bunny1");
+    const bunny2 = sceneElements.sceneGraph.getObjectByName("bunny2");
+    const bunny3 = sceneElements.sceneGraph.getObjectByName("bunny3");
 
-    if (keyD && person.position.x < 5095) {
-        // person.translateZ(disp);
-        // armAngle += 0.1;
-        // person.moveArms(armAngle);
-        // legAngle += 0.1;
-        // person.moveLegs(legAngle);
-        rotate(deltaTime, -Math.PI / 2, person); // Rotate 180 degrees to the right
-    }
-    if (keyW && person.position.z > -5095) {
-        // person.translateZ(disp);
-        // armAngle += 0.1;
-        // person.moveArms(armAngle);
-        // legAngle += 0.1;
-        // person.moveLegs(legAngle);
-        rotate(deltaTime, 0, person); // Rotate 180 degrees to the left
-    }
-    if (keyA && person.position.x > -5095) {
-        // person.translateZ(disp);
-        // armAngle += 0.1;
-        // person.moveArms(armAngle);
-        // legAngle += 0.1;
-        // person.moveLegs(legAngle);
-        rotate(deltaTime, Math.PI / 2, person); // Rotate 180 degrees to the right
-    }
-    if (keyS && person.position.z < 5095) {
-        // person.translateZ(disp);
-        // armAngle += 0.1;
-        // person.moveArms(armAngle);
-        // legAngle += 0.1;
-        // person.moveLegs(legAngle);
-        rotate(deltaTime, Math.PI, person); // Rotate 180 degrees to the left
-    }
+    const bunnies = [];
+    bunnies.push(bunny1);
+    bunnies.push(bunny2);
+    bunnies.push(bunny3);
 
-    // if (keySpace) { // jump
-    //     fallSpeed = -10;
-    // }
+    bunnies.forEach((bunny, index) => {
+        const startX = startsXBunnies[index];
+        const startZ = startsZBunnies[index];
+        const startY = 10;
+        const amplitudeX = 70;
+        const amplitudeY = 40;
+        const amplitudeZ = 100;
+        const frequency = 2;
 
-    // gravity
-    // person.position.y += fallSpeed;
-    // fallSpeed += 0.5;
+        const offsetX = Math.cos(time * frequency + index) * amplitudeX;
+        const offsetY = Math.abs(Math.sin(time * frequency * 2 + index)) * amplitudeY;
+        const offsetZ = Math.sin(time * frequency + index) * amplitudeZ;
 
-    // limit fall
-    // if (person.position.y < 0) {
-    //     person.position.y = 0;
-    //     fallSpeed = 0;
-    // }
+        bunny.position.x = startX + offsetX;
+        bunny.position.y = startY + offsetY;
+        bunny.position.z = startZ + offsetZ;
+        
+    });
 
-    // rendering
-    helper.render(sceneElements);
+    // animate frogs
+    const frog1 = sceneElements.sceneGraph.getObjectByName("frog1");
+    const frog2 = sceneElements.sceneGraph.getObjectByName("frog2");
+    // const frog3 = sceneElements.sceneGraph.getObjectByName("frog3");
+
+    const frogs = [];
+    frogs.push(frog1);
+    frogs.push(frog2);
+    // frogs.push(frog3);
+
+    frogs.forEach((frog, index) => {
+        const startX = startsXFrogs[index];
+        const startZ = startsZFrogs[index];
+        const startY = 10;
+        const amplitudeX = 70;
+        const amplitudeY = 80;
+        const amplitudeZ = 10;
+        const frequency = 1;
+
+        const offsetX = Math.cos(time * frequency + index) * amplitudeX;
+        const offsetY = Math.abs(Math.sin(time * frequency * 2 + index)) * amplitudeY;
+        const offsetZ = Math.sin(time * frequency + index) * amplitudeZ;
+
+        frog.position.x = startX + offsetX;
+        frog.position.y = startY + offsetY;
+        // frog.position.z = startZ + offsetZ;
+        
+    });
+
+    // animate fireflies
+    const fireflies = sceneElements.sceneGraph.getObjectByName("fireflies");
+    // fireflies.rotation.x -= 0.005;
+
+    fireflies.children.forEach((firefly, index) => {
+        const amplitude = 0.5;
+        const frequency = 0.1;
+        const offsetX = Math.sin(time * frequency + index) * amplitude;
+        const offsetY = Math.cos(time * frequency + index) * amplitude;
+        const offsetZ = Math.sin(time * frequency + index) * amplitude;
+
+        firefly.position.x += offsetX;
+        firefly.position.y += offsetY;
+        firefly.position.z += offsetZ;
+    });
 
     // animation
     // call for the next frame
     requestAnimationFrame(computeFrame);
+    
+    // rendering
+    helper.render(sceneElements);
 }
 
-function rotate(dts, angle, person) {
-    var t = 0;
-    const rotationSpeed = 0.01;
+// function rotate(dts, angle, person) {
+//     var t = 0;
+//     const rotationSpeed = 0.01;
 
-    const animateRotation = () => {
-        t += rotationSpeed * dts;
+//     const animateRotation = () => {
+//         t += rotationSpeed * dts;
 
-        if (t >= 1) {
-            t = 1; // Clamp t to ensure it doesn't exceed 1
-        }
+//         if (t >= 1) {
+//             t = 1;
+//         }
 
-        const qb = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle);
+//         const qb = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle);
 
-        person.quaternion.slerp(qb, t);
+//         person.quaternion.slerp(qb, t);
 
-        if (t < 1) {
-            requestAnimationFrame(animateRotation); // Continue animation if not finished
-        }
-    };
+//         if (t < 1) {
+//             requestAnimationFrame(animateRotation); // continue animation if not finished
+//         }
+//     };
 
-    requestAnimationFrame(animateRotation);
-}
+//     requestAnimationFrame(animateRotation);
+// }

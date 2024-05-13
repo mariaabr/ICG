@@ -1,0 +1,11 @@
+Model Information:
+* title:	High - Poly Rock 4
+* source:	https://sketchfab.com/3d-models/high-poly-rock-4-e55209e526d248fabdcce964c4848a9d
+* author:	SDPM Esare (https://sketchfab.com/sdpm)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "High - Poly Rock 4" (https://sketchfab.com/3d-models/high-poly-rock-4-e55209e526d248fabdcce964c4848a9d) by SDPM Esare (https://sketchfab.com/sdpm) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

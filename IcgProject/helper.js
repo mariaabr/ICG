@@ -1,7 +1,7 @@
 // import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/FirstPersonControls.js';
 // import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
 
-const helper = {
+export const helper = {
 
     initEmptyScene: function (sceneElements) {
 
@@ -15,8 +15,8 @@ const helper = {
         const height = window.innerHeight;
         const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20000);
         camera.position.x = 3;
-        camera.position.y = 10; // not on the ground
-        camera.position.z = 21;
+        camera.position.y = 1000; // not on the ground
+        camera.position.z = 3100;
         sceneElements.camera = camera;
         // camera.position.set(0, 4, 500);
         // camera.lookAt(0, 10, 0);
@@ -49,7 +49,7 @@ const helper = {
         spotSunLight.name = "light_sun";
 
         // moon light
-        const spotMoonLight = new THREE.SpotLight('rgb(255, 255, 255)', 0.2, 3000, Math.PI / 2.5); // spotlight + shadows
+        const spotMoonLight = new THREE.SpotLight('rgb(255, 255, 255)', 0.1, 1500, Math.PI / 2.5); // spotlight + shadows
         // spotLight1.decay = 1;
         spotMoonLight.position.set(0, -2700, 0);
         sceneElements.sceneGraph.add(spotMoonLight);
@@ -81,13 +81,23 @@ const helper = {
         htmlElement.appendChild(renderer.domElement);
 
         // control for the camera
-        sceneElements.control = new THREE.FirstPersonControls(camera, renderer.domElement);
-        sceneElements.control.enabled = true;
-        sceneElements.control.activeLook = true;
-        sceneElements.control.movementSpeed = 1.5;
-        sceneElements.control.lookSpeed = 0.01;
-        // sceneElements.control = new THREE.OrbitControls(camera, renderer.domElement);
-        // sceneElements.control.screenSpacePanning = true;
+
+        // pointer lock
+        // sceneElements.control = new THREE.PointerLockControls(camera, renderer.domElement);
+
+        // first person
+        // sceneElements.control = new THREE.FirstPersonControls(camera, renderer.domElement);
+        // sceneElements.control.enabled = true;
+        // sceneElements.control.activeLook = true;
+        // // sceneElements.control.movementSpeed = 1.5;
+        // // sceneElements.control.lookSpeed = 0.01;
+        // sceneElements.control.constrainVertical = true;
+        // sceneElements.control.verticalMin = Math.PI / 1.7;
+        // sceneElements.control.verticalMax = Math.PI / 2.3;
+
+        // orbit
+        sceneElements.control = new THREE.OrbitControls(camera, renderer.domElement);
+        sceneElements.control.screenSpacePanning = true;
         
     }, 
 

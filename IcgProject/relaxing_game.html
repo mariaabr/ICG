@@ -39,6 +39,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/controls/OrbitControls.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/controls/FirstPersonControls.min.js"></script>
 
+	<!-- <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/loaders/TextureLoader.min.js"></script> -->
+	<script src="https://unpkg.com/three@0.122.0/examples/js/loaders/TextureLoader.js"></script>
+	<script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+	<script src="https://unpkg.com/three@0.122.0/examples/js/loaders/FBXLoader.js"></script>
+
 	<script src="https://cdn.jsdelivr.net/npm/three.interaction@0.2.3/build/three.interaction.js"></script>
 
 	<!-- <script type="importmap">
@@ -50,10 +55,11 @@
 		}
 	</script> -->
 
-	<script type="text/javascript" src="builders/createObjects.js" defer></script>
+	<script type="module" src="builders/createObjects.js"></script>
+	<script type="module" src="builders/loadModels.js"></script>
 
-	<script type="text/javascript" src="helper.js" defer></script>
-	<script type="text/javascript" src="scene.js" defer></script>
+	<script type="module" src="helper.js"></script>
+	<script type="module" src="scene.js"></script>
 
 </head>
 

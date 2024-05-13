@@ -1,0 +1,11 @@
+Model Information:
+* title:	Árvores
+* source:	https://sketchfab.com/3d-models/arvores-65c69e3b54664a12ba1d03cbcf6d2865
+* author:	Jéssica Magno (https://sketchfab.com/jessica_magno)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Árvores" (https://sketchfab.com/3d-models/arvores-65c69e3b54664a12ba1d03cbcf6d2865) by Jéssica Magno (https://sketchfab.com/jessica_magno) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
