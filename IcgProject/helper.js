@@ -1,6 +1,6 @@
 // import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/FirstPersonControls.js';
 // import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
-import { PointerLockControls } from './pointerLockControls.js';
+import { PointerLockControls } from './controls/pointerLockControls.js';
 
 export const helper = {
 
