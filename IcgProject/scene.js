@@ -1,4 +1,7 @@
 import { helper } from './helper.js';
+// import { show_blocker } from './helper.js';
+// import { OrbitControls } from './orbitControls.js';
+import { infoObjects } from './builders/infoObjects.js';
 import { createSun } from './builders/createObjects.js';
 import { createMoon } from './builders/createObjects.js';
 import { createTree1 } from './builders/createObjects.js';
@@ -20,15 +23,34 @@ import { Person } from './builders/createObjects.js';
 const sceneElements = {
     sceneGraph: null,
     camera: null,
-    control: null,  // NEW
+    controls: null,
     renderer: null,
+    raycaster: null
 };
 
+// useful variables
+let floorSize = 5000;
 let stars;
 let startsXBunnies = [];
 let startsZBunnies = [];
 let startsXFrogs = [];
 let startsZFrogs = [];
+
+// movement variables
+let moveForward = false;
+let moveBackward = false;
+let moveLeft = false;
+let moveRight = false;
+let canJump = false;
+
+let show_blocker = true;
+
+// performance variables
+let prevTime = performance.now();
+const velocity = new THREE.Vector3();
+const direction = new THREE.Vector3();
+const vertex = new THREE.Vector3();
+const color = new THREE.Color();
 
 // initialize scene
 helper.initEmptyScene(sceneElements);
@@ -36,13 +58,12 @@ load3DObjects(sceneElements.sceneGraph);
 requestAnimationFrame(computeFrame);
 
 // events listeners
-
 window.addEventListener('resize', resizeWindow);
 
 //To keep track of the keyboard - WASD
-var keyD = false, keyA = false, keyS = false, keyW = false, keySpace = false;
-document.addEventListener('keydown', onDocumentKeyDown, false);
-document.addEventListener('keyup', onDocumentKeyUp, false);
+// var keyD = false, keyA = false, keyS = false, keyW = false, keySpace = false;
+// document.addEventListener('keydown', onDocumentKeyDown, false);
+// document.addEventListener('keyup', onDocumentKeyUp, false);
 
 // var controls = new FirstPersonControls(camera, document.body);
 
@@ -60,45 +81,213 @@ function resizeWindow(eventParam) {
     // computeFrame(sceneElements);
 }
 
-function onDocumentKeyDown(event) {
-    switch (event.keyCode) {
-        case 68: //d
-            keyD = true;
+// function getIntersectedObject(detectedGroup) {
+//     // detect intersected model
+//     const raycaster = new THREE.Raycaster();
+//     const mouse = new THREE.Vector2();
+//     raycaster.setFromCamera(mouse, sceneElements.camera);
+//     const intersects = raycaster.intersectObjects(detectedGroup, false);
+//     return intersects.length > 0 ? intersects[0].object : null;
+// }
+
+// function openModal(modelName) {
+//     const modal = document.getElementById('modal');
+//     const title = document.getElementById('modal-title');
+//     const desc = document.getElementById('modal-desc');
+//     const year = document.getElementById('modal-year');
+//     const location = document.getElementById('modal-location');
+
+//     const modelInfo = modelInfos[modelName];
+
+//     title.textContent = modelInfo.title;
+//     desc.textContent = modelInfo.desc;
+//     year.textContent = modelInfo.year;
+//     location.textContent = modelInfo.location;
+
+//     modal.style.display = 'block';
+// }
+
+// document.getElementById('close-modal').addEventListener('click', () => {
+//     document.getElementById('modal').style.display = 'none';
+// });
+
+// function onDocumentKeyDown(event) {
+//     switch (event.keyCode) {
+//         case 68: //d
+//             keyD = true;
+//             break;
+//         case 87: //w
+//             keyW = true;
+//             break;
+//         case 65: //a
+//             keyA = true;
+//             break;
+//         case 83: //s
+//             keyS = true;
+//             break;
+//         case 32: // space
+//             keySpace = true;
+//             break;
+//     }
+// }
+
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('modal').style.display = 'none';
+
+    sceneElements.controls.lock();
+    // show_blocker = false;
+});
+
+function findHighestParent(object) {
+    let current = object;
+    while (current && current.parent!== null) {
+        if (current.parent && current.parent.name) {
+            console.log("Parent: ", current.parent.name);
+            current = current.parent;
+        } else {
             break;
-        case 87: //w
-            keyW = true;
-            break;
-        case 65: //a
-            keyA = true;
-            break;
-        case 83: //s
-            keyS = true;
-            break;
-        case 32: // space
-            keySpace = true;
-            break;
+        }
     }
+    return current? current.name : "Nenhum grupo";
 }
 
-function onDocumentKeyUp(event) {
-    switch (event.keyCode) {
-        case 68: //d
-            keyD = false;
+function loadInfo(object) {
+    let infoObject = infoObjects[object];
+
+    document.getElementById('modal_title').textContent = infoObject['title'];
+    document.getElementById('modal_type').textContent = infoObject['type'];
+    document.getElementById('modal_location').textContent = infoObject['location']+ ', ' + infoObject['year'];
+    document.getElementById('modal_desc').textContent = infoObject['desc'];
+    document.getElementById('modal_year').textContent = infoObject['year'];
+    // $("#modal_size").text(infoObject['size']);
+}
+
+// $('#modal').on('hidden.bs.modal', function () {
+//     controls.lock();
+//     show_blocker = true;
+// });
+
+const onKeyDown = function (event) {
+
+    switch (event.code) {
+        case 'ArrowUp':
+        case 'KeyW':
+            moveForward = true;
             break;
-        case 87: //w
-            keyW = false;
+
+        case 'ArrowLeft':
+        case 'KeyA':
+            moveLeft = true;
             break;
-        case 65: //a
-            keyA = false;
+
+        case 'ArrowDown':
+        case 'KeyS':
+            moveBackward = true;
             break;
-        case 83: //s
-            keyS = false;
+
+        case 'ArrowRight':
+        case 'KeyD':
+            moveRight = true;
             break;
-        case 32: // space
-            keySpace = false;
+
+        case 'KeyE':
+            
+            console.log("keyE");
+            
+            sceneElements.raycaster.setFromCamera(new THREE.Vector2(), sceneElements.camera);
+
+            // const intersectedObject = raycaster.intersectObjects(detectedGroup, false);
+
+            var intersects = sceneElements.raycaster.intersectObjects(sceneElements.sceneGraph.children, true);
+            if (intersects.length > 0) {
+                var firstIntersectedObject = intersects[0];
+                console.log("Objeto interseccionado:", firstIntersectedObject.object.name); // Imprime o nome do objeto interseccionado
+                console.log("Grupo do objeto interseccionado:", findHighestParent(firstIntersectedObject.object)); // Tenta obter o nome do grupo pai
+            }
+
+            // loadInfo(intersectedObject);
+            // $("#modal").modal("toggle");
+
+            if (findHighestParent(firstIntersectedObject.object) === "plane") {
+
+                break;
+            }
+
+            loadInfo(findHighestParent(firstIntersectedObject.object));
+            document.getElementById('modal').style.display = 'block';
+
+            sceneElements.controls.unlock();
+            // show_blocker = false;
+
+            break;
+        
+        // case 'Escape':
+
+        //     instructions.addEventListener( 'click', function () {
+        //         controls.lock();
+        //     });
+
+        //     show_blocker = true;
+
+        //     break;
+
+        // dont need
+        case 'Space':
+            if (canJump === true) velocity.y += 350;
+            canJump = false;
             break;
     }
-}
+
+};
+
+// function onDocumentKeyUp(event) {
+//     switch (event.keyCode) {
+//         case 68: //d
+//             keyD = false;
+//             break;
+//         case 87: //w
+//             keyW = false;
+//             break;
+//         case 65: //a
+//             keyA = false;
+//             break;
+//         case 83: //s
+//             keyS = false;
+//             break;
+//         case 32: // space
+//             keySpace = false;
+//             break;
+//     }
+// }
+
+const onKeyUp = function (event) {
+
+    switch (event.code) {
+        case 'ArrowUp':
+        case 'KeyW':
+            moveForward = false;
+            break;
+
+        case 'ArrowLeft':
+        case 'KeyA':
+            moveLeft = false;
+            break;
+
+        case 'ArrowDown':
+        case 'KeyS':
+            moveBackward = false;
+            break;
+
+        case 'ArrowRight':
+        case 'KeyD':
+            moveRight = false;
+            break;
+    }
+
+};
+
+document.addEventListener( 'keydown', onKeyDown );
+document.addEventListener( 'keyup', onKeyUp );
 
 // building the scene
 // create and insert in the scene graph the models of the 3D scene
@@ -107,7 +296,7 @@ function load3DObjects(sceneGraph) {
 
     // ground plane
     const texture = new THREE.TextureLoader().load("resources/grasstexture.jpeg")
-    const planeGeometry = new THREE.BoxGeometry(5000, 5000, 7);
+    const planeGeometry = new THREE.BoxGeometry(floorSize, floorSize, 7);
     const planeMaterial = new THREE.MeshPhongMaterial({ map: texture, color: 0x88b257, side: THREE.DoubleSide });
     const planeObject = new THREE.Mesh(planeGeometry, planeMaterial);
     sceneGraph.add(planeObject);
@@ -157,11 +346,11 @@ function load3DObjects(sceneGraph) {
 
     // create tree1
     const tree1 = createTree1(1000, 0, -500);
-    sceneGraph.add(tree1);
+    // sceneGraph.add(tree1);
 
     // create forest1
     const forest1 = createForest1();
-    sceneGraph.add(forest1);
+    //  sceneGraph.add(forest1);
 
     // create forest2
     const forest2 = createForest2();
@@ -169,11 +358,11 @@ function load3DObjects(sceneGraph) {
 
     // create forest3
     const forest3 = createForest3();
-    sceneGraph.add(forest3);
+    // sceneGraph.add(forest3);
 
     // create mountains
     const mountains = createMountains();
-    sceneGraph.add(mountains);
+    // sceneGraph.add(mountains);
 
     // create forest fill
     const forestFill = createForestFill();
@@ -181,7 +370,7 @@ function load3DObjects(sceneGraph) {
 
     // create lake ambient
     const lakepart = createLakePartition();
-    sceneGraph.add(lakepart);
+    // sceneGraph.add(lakepart);
 
     // create fireflies
     const fireflies = createFireflies();
@@ -233,7 +422,7 @@ function load3DObjects(sceneGraph) {
     startsZFrogs.push(startZFrog1);
 
     // create frog2
-    const xf2 = Math.random() *  1500 + 500;
+    const xf2 = Math.random() * 1500 + 500;
     const zf2 = Math.random() * 1000 + 500;
     const frog2 = createFrog2(xf2, 10, zf2);
     sceneGraph.add(frog2);
@@ -242,9 +431,9 @@ function load3DObjects(sceneGraph) {
     startsXFrogs.push(startXFrog2);
     let startZFrog2 = zf2;
     startsZFrogs.push(startZFrog2);
-    
+
     // create main character
-    var personObj = new Person(3, 0 , 5);
+    var personObj = new Person(3, 0, 5);
     var person = personObj.createPerson();
     sceneGraph.add(person);
     person.name = "filsons";
@@ -262,7 +451,7 @@ function load3DObjects(sceneGraph) {
 
 function computeFrame() {
 
-    sceneElements.control.update(0.3); // update first camera control;
+    // sceneElements.controls.update(0.3); // update first camera controls;
 
     const sun = sceneElements.sceneGraph.getObjectByName("sun");
     const planetPos = new THREE.Vector3();
@@ -310,7 +499,7 @@ function computeFrame() {
         sceneElements.sceneGraph.getObjectByName("light_sun").intensity = 0;
     }
 
-    // aimations
+    // animations
     const time = Date.now() * 0.001;
     var step = 0;
 
@@ -340,7 +529,7 @@ function computeFrame() {
         bunny.position.x = startX + offsetX;
         bunny.position.y = startY + offsetY;
         bunny.position.z = startZ + offsetZ;
-        
+
     });
 
     // animate frogs
@@ -369,7 +558,7 @@ function computeFrame() {
         frog.position.x = startX + offsetX;
         frog.position.y = startY + offsetY;
         // frog.position.z = startZ + offsetZ;
-        
+
     });
 
     // animate fireflies
@@ -391,30 +580,79 @@ function computeFrame() {
     // animation
     // call for the next frame
     requestAnimationFrame(computeFrame);
-    
+
+    const timeControls = performance.now();
+
+    if (sceneElements.controls.isLocked === true) {
+
+        const delta = (timeControls - prevTime) / 1000;
+
+        velocity.x -= velocity.x * 10.0 * delta;
+        velocity.z -= velocity.z * 10.0 * delta;
+
+        velocity.y -= 9.8 * 100.0 * delta; // 100.0 = mass
+
+        direction.z = Number(moveForward) - Number(moveBackward);
+        direction.x = Number(moveRight) - Number(moveLeft);
+        direction.normalize(); // this ensures consistent movements in all directions
+
+        if (moveForward || moveBackward) velocity.z -= direction.z * 400.0 * delta;
+        if (moveLeft || moveRight) velocity.x -= direction.x * 400.0 * delta;
+
+        sceneElements.controls.moveRight(- velocity.x * delta);
+        sceneElements.controls.moveForward(- velocity.z * delta);
+
+        sceneElements.controls.getObject().position.y += (velocity.y * delta); // new behavior
+
+        if (sceneElements.controls.getObject().position.y < 80) {
+
+            velocity.y = 0;
+            sceneElements.controls.getObject().position.y = 80;
+
+            canJump = false;
+
+        }
+
+        if (
+            sceneElements.controls.getObject().position.x >= floorSize / 2 - (1 + 1)
+        ) {
+            velocity.x = 0;
+            sceneElements.controls.getObject().position.x = floorSize / 2 - (1 + 1);
+
+            canJump = false;
+        }
+
+        else if (
+            sceneElements.controls.getObject().position.x <= - floorSize / 2 + (1 + 1)
+        ) {
+            velocity.x = 0;
+            sceneElements.controls.getObject().position.x = - floorSize / 2 + (1 + 1);
+
+            canJump = false;
+        }
+
+        if (
+            sceneElements.controls.getObject().position.z >= floorSize / 2 - (1 + 1)
+        ) {
+            velocity.z = 0;
+            sceneElements.controls.getObject().position.z = floorSize / 2 - (1 + 1);
+
+            canJump = false;
+        }
+
+        else if (
+            sceneElements.controls.getObject().position.z <= - floorSize / 2 + (1 + 1)
+        ) {
+            velocity.z = 0;
+            sceneElements.controls.getObject().position.z = - floorSize / 2 + (1 + 1);
+
+            canJump = false;
+        }
+
+    }
+
+    prevTime = timeControls;
+
     // rendering
     helper.render(sceneElements);
 }
-
-// function rotate(dts, angle, person) {
-//     var t = 0;
-//     const rotationSpeed = 0.01;
-
-//     const animateRotation = () => {
-//         t += rotationSpeed * dts;
-
-//         if (t >= 1) {
-//             t = 1;
-//         }
-
-//         const qb = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), angle);
-
-//         person.quaternion.slerp(qb, t);
-
-//         if (t < 1) {
-//             requestAnimationFrame(animateRotation); // continue animation if not finished
-//         }
-//     };
-
-//     requestAnimationFrame(animateRotation);
-// }

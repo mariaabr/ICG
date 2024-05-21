@@ -53,6 +53,8 @@ export function createTree1(posx, posy, posz) { // create tree1
     tree1.position.y = posy;
     tree1.position.z = posz;
 
+    tree1.name = "tree1";
+
     return tree1;
     // sceneGraph.add(tree1);
 }
@@ -63,6 +65,8 @@ export function createTree2(posx, posy, posz) { // create tree2
     tree2.position.y = posy;
     tree2.position.z = posz;
 
+    tree2.name = "tree2";
+
     return tree2;
 }
 
@@ -71,6 +75,8 @@ export function createTree3(posx, posy, posz) { // create tree3
     tree3.position.x = posx;
     tree3.position.y = posy;
     tree3.position.z = posz;
+
+    tree3.name = "tree3";
 
     return tree3;
 }
@@ -81,6 +87,8 @@ export function createBush(posx, posy, posz) { // create bush
     bush.position.y = posy;
     bush.position.z = posz;
 
+    bush.name = "bush";
+
     return bush;
 }
 
@@ -89,6 +97,8 @@ export function createBush2(posx, posy, posz) { // create bush2
     bush2.position.x = posx;
     bush2.position.y = posy;
     bush2.position.z = posz;
+
+    bush2.name = "bush2";
 
     return bush2;
 }
@@ -99,6 +109,8 @@ export function createMountain1(posx, posy, posz) { // create mountain1
     mountain1.position.y = posy;
     mountain1.position.z = posz;
 
+    mountain1.name = "mountain1";
+
     return mountain1;
 }
 
@@ -107,6 +119,8 @@ export function createMountain2(posx, posy, posz) { // create mountain2
     mountain2.position.x = posx;
     mountain2.position.y = posy;
     mountain2.position.z = posz;
+
+    mountain2.name = "mountain2";
 
     return mountain2;
 }
@@ -117,6 +131,8 @@ export function createStone1(posx, posy, posz) { // create stone1
     stone1.position.y = posy;
     stone1.position.z = posz;
 
+    stone1.name = "stone1";
+
     return stone1;
 }
 
@@ -125,6 +141,8 @@ export function createStone2(posx, posy, posz) { // create stone2
     stone2.position.x = posx;
     stone2.position.y = posy;
     stone2.position.z = posz;
+
+    stone2.name = "stone2";
 
     return stone2;
 }
@@ -135,6 +153,8 @@ export function createStone3(posx, posy, posz) { // create stone3
     stone3.position.y = posy;
     stone3.position.z = posz;
 
+    stone3.name = "stone3";
+
     return stone3;
 }
 
@@ -143,6 +163,8 @@ export function createStone4(posx, posy, posz) { // create stone4
     stone4.position.x = posx;
     stone4.position.y = posy;
     stone4.position.z = posz;
+
+    stone4.name = "stone4";
 
     return stone4;
 }
@@ -153,6 +175,8 @@ export function createTrunk1(posx, posy, posz) { // create trunk1
     trunk1.position.y = posy;
     trunk1.position.z = posz;
 
+    trunk1.name = "trunk1";
+
     return trunk1;
 }
 
@@ -161,6 +185,8 @@ export function createTrunk2(posx, posy, posz) { // create trunk2
     trunk2.position.x = posx;
     trunk2.position.y = posy;
     trunk2.position.z = posz;
+
+    trunk2.name = "trunk2";
 
     return trunk2;
 }
@@ -177,6 +203,8 @@ export function createTrunk3(posx, posy, posz) { // create trunk3
     trunk3.position.y = posy;
     trunk3.position.z = posz;
 
+    trunk3.name = "trunk3";
+
     return trunk3;
 }
 
@@ -186,6 +214,8 @@ export function createFlowersDaisySunflower(posx, posy, posz) { // create daisyS
     daisySunflower.position.y = posy;
     daisySunflower.position.z = posz;
 
+    daisySunflower.name = "daisySunflower";
+    
     return daisySunflower;
 }
 
@@ -194,6 +224,8 @@ export function createFlowersGrass(posx, posy, posz) { // create flowersGrass
     flowersGrass.position.x = posx;
     flowersGrass.position.y = posy;
     flowersGrass.position.z = posz;
+
+    flowersGrass.name = "flowersGrass";
 
     return flowersGrass;
 }
@@ -204,6 +236,8 @@ export function createFlowersLinen(posx, posy, posz) { // create flowersLinen
     flowersLinen.position.y = posy;
     flowersLinen.position.z = posz;
 
+    flowersLinen.name = "flowersLinen";
+
     return flowersLinen;
 }
 
@@ -212,6 +246,8 @@ export function createFlowerRose(posx, posy, posz) { // create flowerRose
     flowerRose.position.x = posx;
     flowerRose.position.y = posy;
     flowerRose.position.z = posz;
+
+    flowerRose.name = "flowerRose";
 
     return flowerRose;
 }
@@ -222,6 +258,8 @@ export function createFlowerTulip(posx, posy, posz) { // create flowerTulip
     flowerTulip.position.y = posy;
     flowerTulip.position.z = posz;
 
+    flowerTulip.name = "flowerTulip";
+
     return flowerTulip;
 }
 
@@ -230,6 +268,8 @@ export function createMushroom(posx, posy, posz) { // create mushroom
     mushroom.position.x = posx;
     mushroom.position.y = posy;
     mushroom.position.z = posz;
+
+    mushroom.name = "mushroom";
 
     return mushroom;
 }
@@ -263,6 +303,8 @@ export function createWoodFence(posx, posy, posz) { // create fence
     fence.position.y = posy;
     fence.position.z = posz;
 
+    fence.name = "fence";
+    
     return fence;
 }
 
@@ -327,6 +369,8 @@ export function createLake( posx, posy, posz) { // create lake
     //     }
     // }
     
+    water.name = "water";
+    
     return water;
 }
 
@@ -335,6 +379,8 @@ export function createDeer1(posx, posy, posz) { // create deer1
     deer1.position.x = posx;
     deer1.position.y = posy;
     deer1.position.z = posz;
+
+    deer1.name = "deer1";
 
     return deer1;
 }
@@ -345,6 +391,8 @@ export function createDeer2(posx, posy, posz) { // create deer2
     deer2.position.y = posy;
     deer2.position.z = posz;
 
+    deer2.name = "deer2";
+
     return deer2;
 }
 
@@ -353,6 +401,8 @@ export function createDeer3(posx, posy, posz) { // create deer3
     deer3.position.x = posx;
     deer3.position.y = posy;
     deer3.position.z = posz;
+
+    deer3.name = "deer3";
 
     return deer3;
 }
@@ -404,6 +454,8 @@ export function createBunny1(posx, posy, posz) { // create bunny1
     bunny1.position.x = posx;
     bunny1.position.y = posy;
     bunny1.position.z = posz;
+
+    bunny1.name = "bunny1";
 
     return bunny1;
 }
@@ -457,6 +509,8 @@ export function createBunny2(posx, posy, posz) { // create bunny2
     bunny2.position.y = posy;
     bunny2.position.z = posz;
 
+    bunny2.name = "bunny2";
+
     return bunny2;
 }
 
@@ -507,6 +561,8 @@ export function createBunny3(posx, posy, posz) { // create bunny3
     bunny3.position.x = posx;
     bunny3.position.y = posy;
     bunny3.position.z = posz;
+
+    bunny3.name = "bunny3";
 
     return bunny3;
 }
@@ -598,10 +654,12 @@ export function createFrog1(posx, posy, posz) { // create frog1
     frog1.position.y = posy;
     frog1.position.z = posz;
 
+    frog1.name = "frog1";
+
     return frog1;
 }
 
-export function createFrog2(posx, posy, posz) { // create frog1
+export function createFrog2(posx, posy, posz) { // create frog2
     const frog2 = new THREE.Group();
 
     const texture = new THREE.TextureLoader().load("resources/frogtexture.jpg");
@@ -688,6 +746,8 @@ export function createFrog2(posx, posy, posz) { // create frog1
     frog2.position.y = posy;
     frog2.position.z = posz;
 
+    frog2.name = "frog2";
+
     return frog2;
 }
 
@@ -722,6 +782,8 @@ export function createFireflies() { // create fireflies
         fireflies.add(firefly);
     }
 
+    fireflies.name = "fireflies";
+    
     return fireflies;
 }
 

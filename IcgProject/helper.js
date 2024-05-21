@@ -1,5 +1,6 @@
 // import { FirstPersonControls } from 'https://threejs.org/examples/jsm/controls/FirstPersonControls.js';
 // import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js';
+import { PointerLockControls } from './pointerLockControls.js';
 
 export const helper = {
 
@@ -14,18 +15,24 @@ export const helper = {
         const width = window.innerWidth;
         const height = window.innerHeight;
         const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20000);
-        camera.position.x = 3;
-        camera.position.y = 1000; // not on the ground
-        camera.position.z = 3100;
+        camera.position.x = 50;
+        camera.position.y = 500; // not on the ground
+        camera.position.z = 1700;
         sceneElements.camera = camera;
+        // sceneElements.camera.position.y = 200;
         // camera.position.set(0, 4, 500);
         // camera.lookAt(0, 10, 0);
 
+        // init raycaster
+        sceneElements.raycaster = new THREE.Raycaster();
+
+        let show_blocker = true;
+        
         // axes helper
         const axesHelper = new THREE.AxesHelper( 5000 );
         // axesHelper.setColors (new THREE.Color( 0xff0000 ), new THREE.Color( 0xff0000 ), new THREE.Color( 0xff0000 ) )
         
-        sceneElements.sceneGraph.add(axesHelper);
+        // sceneElements.sceneGraph.add(axesHelper);
 
         // ilumination
         const ambientLight = new THREE.AmbientLight('rgb(255, 255, 255)', 0.5); // ambient light
@@ -76,6 +83,32 @@ export const helper = {
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
+        sceneElements.controls = new PointerLockControls( camera, document.body );
+        
+        blocker = document.getElementById( 'blocker' );
+        instructions = document.getElementById( 'instructions' );
+
+        // sceneElements.controls.addEventListener('pointerlockchange', function() {
+        //     show_blocker = sceneElements.controls.isLocked();
+        //     console.log("show_blocker: " + show_blocker);
+        // });
+
+        instructions.addEventListener( 'click', function () {
+            sceneElements.controls.lock();
+        });
+
+        sceneElements.controls.addEventListener( 'lock', function () {
+            instructions.style.display = 'none';
+            blocker.style.display = 'none';
+        });
+
+        sceneElements.controls.addEventListener( 'unlock', function () {
+            if (show_blocker == true) {
+                blocker.style.display = 'block';
+                instructions.style.display = 'block';
+            }
+        });
+        
         // add the rendered image in the HTML DOM
         const htmlElement = document.querySelector("#SceneGame");
         htmlElement.appendChild(renderer.domElement);
@@ -96,9 +129,10 @@ export const helper = {
         // sceneElements.control.verticalMax = Math.PI / 2.3;
 
         // orbit
-        sceneElements.control = new THREE.OrbitControls(camera, renderer.domElement);
-        sceneElements.control.screenSpacePanning = true;
-        
+        // sceneElements.control = new THREE.OrbitControls(camera, renderer.domElement);
+        // sceneElements.control.screenSpacePanning = true;
+
+        // scene.add( sceneElements.controls.getObject() );
     }, 
 
     render: function (sceneElements) {
