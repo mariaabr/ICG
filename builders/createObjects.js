@@ -22,7 +22,7 @@ import { loadDeer2 } from './loadModels.js';
 import { loadDeer3 } from './loadModels.js';
 
 export function createSun(posx, posy, posz) { // create sun
-    const texture = new THREE.TextureLoader().load("resources/suntexture.jpeg")
+    const texture = new THREE.TextureLoader().load("resources/textures/suntexture.jpeg")
     const geometry = new THREE.SphereGeometry(150, 64, 64);
     const material = new THREE.MeshBasicMaterial({ map: texture, color: 0xfaff61 });
     // const material = new THREE.MeshBasicMaterial({ color: 0xfaff61 });
@@ -35,7 +35,7 @@ export function createSun(posx, posy, posz) { // create sun
 }
 
 export function createMoon(posx, posy, posz) { // create moon
-    const texture = new THREE.TextureLoader().load("resources/moontexture.jpg")
+    const texture = new THREE.TextureLoader().load("resources/textures/moontexture.jpg")
     const geometry = new THREE.SphereGeometry(100, 64, 64);
     const material = new THREE.MeshBasicMaterial({ map: texture, color: 0xb0afae });
     // const material = new THREE.MeshBasicMaterial({ color: 0xb0afae });
@@ -192,7 +192,7 @@ export function createTrunk2(posx, posy, posz) { // create trunk2
 }
 
 export function createTrunk3(posx, posy, posz) { // create trunk3
-    const texture = new THREE.TextureLoader().load("resources/woodtexture.jpg")
+    const texture = new THREE.TextureLoader().load("resources/textures/woodtexture.jpg")
     const geometry = new THREE.CylinderGeometry(4.5, 5.5, 4.8, 10);
     const material = new THREE.MeshBasicMaterial({ map: texture, color: 0x422600 });
     const trunk3 = new THREE.Mesh(geometry, material);
@@ -277,7 +277,7 @@ export function createMushroom(posx, posy, posz) { // create mushroom
 export function createWoodFence(posx, posy, posz) { // create fence
     const fence = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/woodtexture.jpg");
+    const texture = new THREE.TextureLoader().load("resources/textures/woodtexture.jpg");
 
     const woodMaterial = new THREE.MeshBasicMaterial({ map:texture, color: 0x8b4513 });
     const postGeometry = new THREE.BoxGeometry(0.1, 2, 0.1);
@@ -311,7 +311,7 @@ export function createWoodFence(posx, posy, posz) { // create fence
 export function createLake( posx, posy, posz) { // create lake
     const water = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/laketexture2.jpeg");
+    const texture = new THREE.TextureLoader().load("resources/textures/laketexture2.jpeg");
 
     // water
     const geometryb = new THREE.BoxGeometry( 300, 700, 0 ); 
@@ -410,7 +410,7 @@ export function createDeer3(posx, posy, posz) { // create deer3
 export function createBunny1(posx, posy, posz) { // create bunny1
     const bunny1 = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/bunnytexture.jpeg");
+    const texture = new THREE.TextureLoader().load("resources/textures/bunnytexture.jpeg");
     // const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xb48e44 });
     const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xffffff });
 
@@ -463,7 +463,7 @@ export function createBunny1(posx, posy, posz) { // create bunny1
 export function createBunny2(posx, posy, posz) { // create bunny2
     const bunny2 = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/bunnytexture.jpeg");
+    const texture = new THREE.TextureLoader().load("resources/textures/bunnytexture.jpeg");
     
     // const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xb48e44 });
     const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xb6b6b4 });
@@ -517,7 +517,7 @@ export function createBunny2(posx, posy, posz) { // create bunny2
 export function createBunny3(posx, posy, posz) { // create bunny3
     const bunny3 = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/bunnytexture.jpeg");
+    const texture = new THREE.TextureLoader().load("resources/textures/bunnytexture.jpeg");
     // const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xb48e44 });
     const material = new THREE.MeshBasicMaterial({ map:texture, color: 0xe5bb8b });
 
@@ -570,7 +570,7 @@ export function createBunny3(posx, posy, posz) { // create bunny3
 export function createFrog1(posx, posy, posz) { // create frog1
     const frog1 = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/frogtexture.jpg");
+    const texture = new THREE.TextureLoader().load("resources/textures/frogtexture.jpg");
     // const material = new THREE.MeshBasicMaterial({ map:texture, color: 0x6ea162 });
     const material = new THREE.MeshBasicMaterial({ map:texture, color: 0x00ff00 });
 
@@ -662,7 +662,7 @@ export function createFrog1(posx, posy, posz) { // create frog1
 export function createFrog2(posx, posy, posz) { // create frog2
     const frog2 = new THREE.Group();
 
-    const texture = new THREE.TextureLoader().load("resources/frogtexture.jpg");
+    const texture = new THREE.TextureLoader().load("resources/textures/frogtexture.jpg");
     // const material = new THREE.MeshBasicMaterial({ map:texture, color: 0x6ea162 });
     const material = new THREE.MeshBasicMaterial({ map:texture, color: 0x79e85f });
 
@@ -776,6 +776,7 @@ export function createFireflies() { // create fireflies
         // firefly light
         const pointFireflyLight = new THREE.PointLight(0xb48e44, 1.2, 150);
         pointFireflyLight.position.set(0, 0, 0);
+        const spotLightHelper = new THREE.PointLightHelper( pointFireflyLight );
 
         firefly.add(pointFireflyLight);
 

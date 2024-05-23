@@ -1,6 +1,40 @@
+const carvalho = "./resources/img/carvalho.png";
+const freixo = "./resources/img/freixo.png";
+const pinheiro = "./resources/img/pinheiro.png";
+const buxo = "./resources/img/buxo.png";
+const ephedra = "./resources/img/ephedra.png";
+const montanhaNeves = "./resources/img/montanhaNeves.png";
+const grandeMontanha = "./resources/img/grandeMontanha.png";
+const granito = "./resources/img/granito.png";
+const basalto = "./resources/img/basalto.png";
+const marmore = "./resources/img/marmore.png";
+const gnaisse = "./resources/img/gnaisse.png";
+const troncoDeitado = "./resources/img/troncoDeitado.png";
+const troncoMedio = "./resources/img/troncoMedio.png";
+const troncoBaixo = "./resources/img/troncoBaixo.png";
+const margaridaGirassois = "./resources/img/margaridaGirassois.png";
+const relvaFlores = "./resources/img/relvaFlores.png";
+const linho = "./resources/img/linho.png";
+const rosa = "./resources/img/rosa.png";
+const tulipa = "./resources/img/tulipa.png";
+const cogumelo = "./resources/img/cogumelo.png";
+const cercaMadeira = "./resources/img/cercaMadeira.png";
+const riacho = "./resources/img/riacho.png";
+const veadoCria = "./resources/img/veadoCria.png";
+const veadoMacho = "./resources/img/veadoMacho.png";
+const veadoFemea = "./resources/img/veadoFemea.png";
+const coelhoBranco = "./resources/img/coelhoBranco.png";
+const coelhoCinzento = "./resources/img/coelhoCinzento.png";
+const coelhoBeje = "./resources/img/coelhoBeje.png";
+const sapoVerdeClaro = "./resources/img/sapoVerdeClaro.png";
+const spoVerdePistaccio = "./resources/img/spoVerdePistaccio.png";
+const pirilampos = "./resources/img/pirilampos.png";
+const filsons = "./resources/img/filsons.png";
+
 export const infoObjects = {
     "tree1" : {
         'title': 'Carvalho',
+        'image': carvalho,
         'name': 'Quercus',
         'desc': 'Plantae - Angiosperma - Eudicotiledóneas - Dicotiledónea - Fagales - Fagaceae - Quercus',
         'location': 'Bosques marcescentes - clima mediterrâneo',
@@ -9,6 +43,7 @@ export const infoObjects = {
 
     "tree2" : {
         'title': 'Freixo',
+        'image': freixo,
         'name': 'Fraxinus excelsior',
         'desc': 'Plantae - Magnoliophyta - Magnoliopsida - Lamiales - Oleaceae - Fraxinus',
         'location': 'Bosques ripícolas ou em bosques caducifólios em vertentes de montanha',
@@ -17,6 +52,7 @@ export const infoObjects = {
 
     "tree3" : {
         'title': 'Pinheiro',
+        'image': pinheiro,
         'name': 'Pinus',
         'desc': 'Plantae - Tracheophyta - Pinopsida - Pinales - Pinaceae - Pinus',
         'location': 'Locais ensolarados, com solos frescos e profundos, principalmente os ácidos, soltos e arenoso, perto do litoral',
@@ -25,6 +61,7 @@ export const infoObjects = {
 
     "bush1" : {
         'title': 'Buxo',
+        'image': buxo,
         'name': 'Buxus',
         'desc': 'Plantae - Magnoliophyta - Magnoliopsida - Buxales - Buxaceae - Buxus',
         'location': 'Matagais ripícolas em leitos de cheia e barrancos',
@@ -33,6 +70,7 @@ export const infoObjects = {
 
     "bush2" : {
         'title': 'Ephedra',
+        'image': ephedra,
         'name': 'Ephedra',
         'desc': 'Plantae - Gnetophyta - Gnetopsida - Gnetales - Ephedraceae - Ephedra',
         'location': 'Habitats secos, nomeadamente solos arenosos de dunas estabilizadas e afloramentos rochosos',
@@ -41,6 +79,7 @@ export const infoObjects = {
 
     "montain1" : {
         'title': 'Montanha das neves',
+        'image': montanhaNeves,
         'name': 'Montanha com neve',
         'desc': 'Composta por rochas magmáticas e sedimentares',
         'location': 'Cordilheira das pálidas colinas',
@@ -49,6 +88,7 @@ export const infoObjects = {
 
     "montain2" : {
         'title': 'Grande montanha',
+        'image': grandeMontanha,
         'name': 'Monte Real',
         'desc': 'Composta por rochas magmáticas como o granito',
         'location': 'Vale da secura',
@@ -57,6 +97,7 @@ export const infoObjects = {
 
     "stone1" : {
         'title': 'Rocha de granito',
+        'image': granito,
         'name': 'Granito',
         'desc': 'Rocha magmática',
         'location': 'Mica, feldspato e quartzo',
@@ -65,6 +106,7 @@ export const infoObjects = {
 
     "stone2" : {
         'title': 'Rocha de basalto',
+        'image': basalto,
         'name': 'Basalto',
         'desc': 'Rocha magmática',
         'location': 'Espinélio, magnetita, ilmenita e apatita',
@@ -73,6 +115,7 @@ export const infoObjects = {
 
     "stone3" : {
         'title': 'Rocha de mármore',
+        'image': marmore,
         'name': 'Mármore',
         'desc': 'Rocha metamórfica',
         'location': 'Calcita e/ou dolomita - pode apresentar quartzo, talco ou olivina',
@@ -81,6 +124,7 @@ export const infoObjects = {
 
     "stone4" : {
         'title': 'Rocha de gnaisse',
+        'image': gnaisse,
         'name': 'Gnaisse',
         'desc': 'Rocha metamórfica',
         'location': 'Feldspato potássico, plagioclásio, e ainda quartzo e biotita',
@@ -89,6 +133,7 @@ export const infoObjects = {
 
     "trunk1" : {
         'title': 'Tronco deitado',
+        'image': troncoDeitado,
         'name': 'Azinheira (Quercus ilex) cortada',
         'desc': 'Plantae - Magnoliophyta - Magnoliopsida - Fagales - Fagaceae - Quercus',
         'location': 'Habitats secos, nomeadamente solos arenosos de dunas estabilizadas e afloramentos rochosos',
@@ -97,6 +142,7 @@ export const infoObjects = {
 
     "trunk2" : {
         'title': 'Tronco médio',
+        'image': troncoMedio,
         'name': 'Freixo (Fraxinus excelsior) cortado',
         'desc': 'Plantae - Magnoliophyta - Magnoliopsida - Lamiales - Oleaceae - Fraxinus',
         'location': 'Bosques ripícolas ou em bosques caducifólios em vertentes de montanha',
@@ -105,6 +151,7 @@ export const infoObjects = {
 
     "trunk3" : {
         'title': 'Tronco baixo',
+        'image': troncoBaixo,
         'name': 'Carvalho (Quercus) cortado',
         'desc': 'Plantae - Angiosperma - Eudicotiledóneas - Dicotiledónea - Fagales - Fagaceae - Quercus',
         'location': 'Bosques marcescentes - clima mediterrâneo',
@@ -113,6 +160,7 @@ export const infoObjects = {
 
     "daisySunflower" : {
         'title': 'Margaridas e Girassóis',
+        'image': margaridaGirassois,
         'name': 'Leucanthemum vulgare e Helianthus annuus',
         'desc': 'Plantae - Angiosperma - Eudicotiledóneas - Asterales - Asteraceae 1.- Leucanthemum e 2.- Helianthus',
         'location': 'Zonas ribeirinhas (habitats ripícolas) e relvados húmidos',
@@ -121,6 +169,7 @@ export const infoObjects = {
 
     "flowersGrass" : {
         'title': 'Relva e flores',
+        'image': relvaFlores,
         'name': 'Cynodon dactylon',
         'desc': 'Plantae - Angiosperma - Monocotiledóneas - Poales - Poaceae - Cynodonteae - Cynodon',
         'location': 'Pastos',
@@ -129,6 +178,7 @@ export const infoObjects = {
 
     "flowersLinen" : {
         'title': 'Linho',
+        'image': linho,
         'name': 'Linum usitatissimum',
         'desc': 'Plantae - Magnoliophyta - Magnoliopsida - Malpighiales - Linaceae - Linum',
         'location': 'Prados e solos arenosos',
@@ -137,6 +187,7 @@ export const infoObjects = {
 
     "flowerRose" : {
         'title': 'Rosa',
+        'image': rosa,
         'name': 'Rosa',
         'desc': 'Plantae - Rosídeas - Eudicotiledóneas - Angiospérmicas - Rosales - Rosaceae - Rosa',
         'location': 'Ribeiras e margens de caminhos, prefere solos profundos e frescos',
@@ -145,6 +196,7 @@ export const infoObjects = {
 
     "flowerTulip" : {
         'title': 'Tulipa',
+        'image': tulipa,
         'name': 'Tulipa',
         'desc': 'Plantae - Magnoliophyta - Liliopsida - Liliales - Liliaceae - Tulipa',
         'location': 'Clareiras de matos e bosques perenifólios',
@@ -153,6 +205,7 @@ export const infoObjects = {
 
     "mushroom" : {
         'title': 'Cogumelo',
+        'image': cogumelo,
         'name': 'Amanita muscaria',
         'desc': 'Fungi - Basidiomycota - Homobasidiomycetes - Agaricales - Amanitaceae - Amanita',
         'location': 'Florestas de coníferas e decíduas ao longo das regiões temperadas',
@@ -161,6 +214,7 @@ export const infoObjects = {
 
     "fence" : {
         'title': 'Cerca de madeira',
+        'image': cercaMadeira,
         'name': 'Cerca de madeira',
         'desc': 'Cerca o riacho para impedir que se vá com a corrente',
         'location': 'Floresta Corfília na zona do riacho',
@@ -169,6 +223,7 @@ export const infoObjects = {
 
     "water" : {
         'title': 'Riacho',
+        'image': riacho,
         'name': 'Corrente de àgua',
         'desc': 'Zona de riacho devido ao ambiente temperado da florest - àgua potável',
         'location': 'Floresta Corfília',
@@ -177,6 +232,7 @@ export const infoObjects = {
 
     "deer1" : {
         'title': 'Cria de veado',
+        'image': veadoCria,
         'name': 'Cervidae',
         'desc': 'Animalia - Chordata - Mammalia - Artiodactyla - Cervidae',
         'location': 'Bosques caducifólios e mistos, bosque de montanha até ao limite arbóreo e zonas de parques',
@@ -185,6 +241,7 @@ export const infoObjects = {
 
     "deer2" : {
         'title': 'Veado Macho',
+        'image': veadoMacho,
         'name': 'Cervidae',
         'desc': 'Animalia - Chordata - Mammalia - Artiodactyla - Cervidae',
         'location': 'Bosques caducifólios e mistos, bosque de montanha até ao limite arbóreo e zonas de parques',
@@ -193,6 +250,7 @@ export const infoObjects = {
 
     "deer3" : {
         'title': 'Veado Fêmea',
+        'image': veadoFemea,
         'name': 'Cervidae',
         'desc': 'Animalia - Chordata - Mammalia - Artiodactyla - Cervidae',
         'location': 'Bosques caducifólios e mistos, bosque de montanha até ao limite arbóreo e zonas de parques',
@@ -201,6 +259,7 @@ export const infoObjects = {
 
     "bunny1" : {
         'title': 'Coelho Branco',
+        'image': coelhoBranco,
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
@@ -209,6 +268,7 @@ export const infoObjects = {
 
     "bunny2" : {
         'title': 'Coelho Cinzento',
+        'image': coelhoCinzento,
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
@@ -217,6 +277,7 @@ export const infoObjects = {
 
     "bunny3" : {
         'title': 'Coelho Beje',
+        'image': coelhoBeje,
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
@@ -225,6 +286,7 @@ export const infoObjects = {
 
     "frog1" : {
         'title': 'Sapo verde claro',
+        'image': sapoVerdeClaro,
         'name': 'Bufo bufo',
         'desc': 'Animalia - Chordata - Amphibia - Anura - Bufonidae - Bufo',
         'location': 'Locais úmidos, como próximo de riachos e lagoas',
@@ -233,6 +295,7 @@ export const infoObjects = {
 
     "frog2" : {
         'title': 'Sapo verde pistachio',
+        'image': spoVerdePistaccio,
         'name': 'Bufo bufo',
         'desc': 'Animalia - Chordata - Amphibia - Anura - Bufonidae - Bufo',
         'location': 'Locais úmidos, como próximo de riachos e lagoas',
@@ -241,6 +304,7 @@ export const infoObjects = {
 
     "fireflies" : {
         'title': 'Pirilampo de rabo amarelo',
+        'image': pirilampos,
         'name': 'Lampyris',
         'desc': 'Animalia - Arthropoda - Insecta - Coleoptera - Lampyridae - Lampyris',
         'location': 'Zonas húmidas, longe de pesticidas que matam as suas presas, e longe das luzes intensas (que perturbam a sua comunicação)',
@@ -249,6 +313,7 @@ export const infoObjects = {
 
     "filsons" : {
         'title': 'Filsons',
+        'image': filsons,
         'name': 'Olá, eu sou a Filsons!',
         'desc': 'Este é mundo mágico cheio de coisas novas para aprender. Procura e aprende sobre plantas e animais.',
         'location': 'Skyline Atmosphere',

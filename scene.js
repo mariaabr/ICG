@@ -2,11 +2,8 @@ import { helper } from './helper.js';
 // import { show_blocker } from './helper.js';
 // import { OrbitControls } from './orbitControls.js';
 import { infoObjects } from './builders/infoObjects.js';
-import { createDeer1, createDeer2, createDeer3, createFlowerRose, createFlowerTulip, createFlowersDaisySunflower, createFlowersGrass, createFlowersLinen, createLake, createMushroom, createSun, createWoodFence } from './builders/createObjects.js';
+import { createSun} from './builders/createObjects.js';
 import { createMoon } from './builders/createObjects.js';
-import { createMountain1, createMountain2 } from './builders/createObjects.js';
-import { createTrunk1, createTrunk2, createTrunk3, createStone4 } from './builders/createObjects.js';
-import { createTree3 } from './builders/createObjects.js';
 import { createForest1 } from './builders/createObjects.js';
 import { createForest2 } from './builders/createObjects.js';
 import { createForest3 } from './builders/createObjects.js';
@@ -157,6 +154,7 @@ function loadInfo(object) {
     let infoObject = infoObjects[object];
 
     document.getElementById('modal_title').textContent = infoObject['title'];
+    document.getElementById('modal_image').src = infoObject['image'];
     document.getElementById('modal_name').textContent = infoObject['name'];
     document.getElementById('modal_desc').textContent = infoObject['desc'];
     document.getElementById('modal_location').textContent = infoObject['location'];
@@ -291,7 +289,7 @@ document.addEventListener( 'keyup', onKeyUp );
 function load3DObjects(sceneGraph) {
 
     // ground plane
-    const texture = new THREE.TextureLoader().load("resources/grasstexture.jpeg")
+    const texture = new THREE.TextureLoader().load("resources/textures/grasstexture.jpeg")
     const planeGeometry = new THREE.BoxGeometry(floorSize, floorSize, 7);
     const planeMaterial = new THREE.MeshPhongMaterial({ map: texture, color: 0x88b257, side: THREE.DoubleSide });
     const planeObject = new THREE.Mesh(planeGeometry, planeMaterial);
@@ -342,19 +340,19 @@ function load3DObjects(sceneGraph) {
 
     // create forest1
     const forest1 = createForest1();
-    //  sceneGraph.add(forest1);
+    sceneGraph.add(forest1);
 
     // create forest2
     const forest2 = createForest2();
-    // sceneGraph.add(forest2);
+    sceneGraph.add(forest2);
 
     // create forest3
     const forest3 = createForest3();
-    // sceneGraph.add(forest3);
+    sceneGraph.add(forest3);
 
     // create mountains
     const mountains = createMountains();
-    // sceneGraph.add(mountains);
+    sceneGraph.add(mountains);
 
     // create forest fill
     const forestFill = createForestFill();
@@ -362,7 +360,7 @@ function load3DObjects(sceneGraph) {
 
     // create lake ambient
     const lakepart = createLakePartition();
-    // sceneGraph.add(lakepart);
+    sceneGraph.add(lakepart);
 
     // create fireflies
     const fireflies = createFireflies();
