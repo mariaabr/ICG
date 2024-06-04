@@ -6,7 +6,7 @@ export function loadTree1() {
   loader.load(
 
     // resource URL
-    '../models/trees/arvore/scene.gltf',
+    '../resources/models/trees/arvore/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -42,7 +42,7 @@ export function loadTree2() {
   loader.load(
 
     // resource URL
-    '../models/trees/arvore__tree_low_poly/scene.gltf',
+    '../resources/models/trees/arvore__tree_low_poly/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -77,7 +77,7 @@ export function loadTree3() {
   loader.load(
 
     // resource URL
-    '../models/trees/arvores/scene.gltf',
+    '../resources/models/trees/arvores/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -112,7 +112,7 @@ export function loadBush() {
   loader.load(
 
     // resource URL
-    '../models/bush/arbustos/scene.gltf',
+    '../resources/models/bush/arbustos/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -147,7 +147,7 @@ export function loadBush2() {
   loader.load(
 
     // resource URL
-    '../models/bush/dead_bush/scene.gltf',
+    '../resources/models/bush/dead_bush/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -182,7 +182,7 @@ export function loadMountain1() {
   loader.load(
 
     // resource URL
-    '../models/mountains/mountain/scene.gltf',
+    '../resources/models/mountains/mountain/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -217,7 +217,7 @@ export function loadMountain2() {
   loader.load(
 
     // resource URL
-    '../models/mountains/mountain2/scene.gltf',
+    '../resources/models/mountains/mountain2/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -252,7 +252,7 @@ export function loadStone1() {
   loader.load(
 
     // resource URL
-    '../models/stones/real_rock/scene.gltf',
+    '../resources/models/stones/real_rock/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -287,7 +287,7 @@ export function loadStone2() {
   loader.load(
 
     // resource URL
-    '../models/stones/small_pbr_rock/scene.gltf',
+    '../resources/models/stones/small_pbr_rock/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -322,7 +322,7 @@ export function loadStone3() {
   loader.load(
 
     // resource URL
-    '../models/stones/small_rock_03/scene.gltf',
+    '../resources/models/stones/small_rock_03/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -357,7 +357,7 @@ export function loadStone4() {
   loader.load(
 
     // resource URL
-    '../models/stones/high_poly_rock_4/scene.gltf',
+    '../resources/models/stones/high_poly_rock_4/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -392,7 +392,7 @@ export function loadTrunk1() {
   loader.load(
 
     // resource URL
-    '../models/wood/low_poly_fairy_log/scene.gltf',
+    '../resources/models/wood/low_poly_fairy_log/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -427,7 +427,7 @@ export function loadTrunk2() {
   loader.load(
 
     // resource URL
-    '../models/wood/low_poly_tree_trunk/scene.gltf',
+    '../resources/models/wood/low_poly_tree_trunk/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -462,7 +462,7 @@ export function loadFlowersDaisySunflower() {
   loader.load(
 
     // resource URL
-    '../models/flowers/bush_daisies_sunflower/scene.gltf',
+    '../resources/models/flowers/bush_daisies_sunflower/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -497,7 +497,7 @@ export function loadFlowersGrass() {
   loader.load(
 
     // resource URL
-    '../models/flowers/grass_and_flower/scene.gltf',
+    '../resources/models/flowers/grass_and_flower/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -532,7 +532,7 @@ export function loadFlowersLinen() {
   loader.load(
 
     // resource URL
-    '../models/flowers/linen_with_flowers/scene.gltf',
+    '../resources/models/flowers/linen_with_flowers/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -567,7 +567,7 @@ export function loadFlowerRose() {
   loader.load(
 
     // resource URL
-    '../models/flowers/rose/scene.gltf',
+    '../resources/models/flowers/rose/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -602,7 +602,7 @@ export function loadFlowerTulip() {
   loader.load(
 
     // resource URL
-    '../models/flowers/simple_tulip/scene.gltf',
+    '../resources/models/flowers/simple_tulip/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -637,7 +637,7 @@ export function loadMushroom() {
   loader.load(
 
     // resource URL
-    '../models/flowers/uvmushroom/scene.gltf',
+    '../resources/models/flowers/uvmushroom/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -672,7 +672,7 @@ export function loadDeer1() {
   loader.load(
 
     // resource URL
-    '../models/animals/deer/scene.gltf',
+    '../resources/models/animals/deer/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -707,7 +707,7 @@ export function loadDeer2() {
   loader.load(
 
     // resource URL
-    '../models/animals/low_poly_deer_elk/scene.gltf',
+    '../resources/models/animals/low_poly_deer_elk/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {
@@ -742,7 +742,7 @@ export function loadDeer3() {
   loader.load(
 
     // resource URL
-    '../models/animals/deer_box/scene.gltf',
+    '../resources/models/animals/deer_box/scene.gltf',
 
     // called when the resource is loaded
     function ( gltf ) {

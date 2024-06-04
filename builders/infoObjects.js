@@ -12,7 +12,7 @@ const gnaisse = "./resources/img/gnaisse.png";
 const troncoDeitado = "./resources/img/troncoDeitado.png";
 const troncoMedio = "./resources/img/troncoMedio.png";
 const troncoBaixo = "./resources/img/troncoBaixo.png";
-const margaridaGirassois = "./resources/img/margaridaGirassois.png";
+const margaridasGirassois = "./resources/img/margaridasGirassois.png";
 const relvaFlores = "./resources/img/relvaFlores.png";
 const linho = "./resources/img/linho.png";
 const rosa = "./resources/img/rosa.png";
@@ -160,7 +160,7 @@ export const infoObjects = {
 
     "daisySunflower" : {
         'title': 'Margaridas e Girassóis',
-        'image': margaridaGirassois,
+        'image': margaridasGirassois,
         'name': 'Leucanthemum vulgare e Helianthus annuus',
         'desc': 'Plantae - Angiosperma - Eudicotiledóneas - Asterales - Asteraceae 1.- Leucanthemum e 2.- Helianthus',
         'location': 'Zonas ribeirinhas (habitats ripícolas) e relvados húmidos',
@@ -263,7 +263,7 @@ export const infoObjects = {
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
-        'use': 'Couro para a fabricação de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
+        'use': 'Couro para a fabrico de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
     },
 
     "bunny2" : {
@@ -272,7 +272,7 @@ export const infoObjects = {
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
-        'use': 'Couro para a fabricação de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
+        'use': 'Couro para a fabrico de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
     },
 
     "bunny3" : {
@@ -281,7 +281,7 @@ export const infoObjects = {
         'name': 'Oryctolagus cuniculus',
         'desc': 'Animalia - Chordata - Mammalia - Lagomorpha - Leporidae - Oryctolagus',
         'location': 'Matas e florestas em tocas ou buracos das árvores',
-        'use': 'Couro para a fabricação de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
+        'use': 'Couro para a fabrico de casacos, bolsas e artesanato, pelo para pincéis e chapéus e excremento para adubo e complemento da ração de outros animais'
     },
 
     "frog1" : {
